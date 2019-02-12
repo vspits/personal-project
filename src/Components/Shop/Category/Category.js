@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './category.css'
 
 class Category extends Component {
     constructor(props){
@@ -11,7 +12,12 @@ class Category extends Component {
     render(){
         return(
             <div>
-                <span>Category</span>
+                <p className='Title'>Shop by Category</p>
+
+                <div className='CategoryComponent'>
+                    <span></span>
+                </div>
+
             </div>
         )
     }

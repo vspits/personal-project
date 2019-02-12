@@ -5,15 +5,25 @@ import './nav.css'
 export default function Nav(props){
     return (
         <div className='Nav'>
+
             <div className='Logo'>
-                <Link to='/'><span>LOGO</span></Link>
+
+                <Link to='/' className='link-tags'><span className='title'>FancyLogo</span></Link>
+
             </div>
+            
             <div className='links-container'>
-                <Link to='/cart'><span className='nav-links'>CART</span></Link>
-                <Link to='/shop'><span className='nav-links'>SHOP</span></Link>
-                <Link to='/posts'><span className='nav-links'>BLOG</span></Link>
-                <Link to='/about'><span className='nav-links'>ABOUT</span></Link>
-                <Link to='/auth/login'><span className='nav-links'>LOGIN</span></Link>
+
+                <Link to='/cart' className='link-tags'><span className='nav-links'>CART</span></Link>
+
+                <Link to='/shop' className='link-tags'><span className='nav-links'>SHOP</span></Link>
+
+                <Link to='/posts' className='link-tags'><span className='nav-links'>BLOG</span></Link>
+
+                <Link to='/about' className='link-tags'><span className='nav-links'>ABOUT</span></Link>
+
+                <Link to='/auth/login' className='link-tags'><span className='nav-links'>LOGIN</span></Link>
+
             </div>
         </div>
     )

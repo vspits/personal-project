@@ -1,0 +1,15 @@
+.CategoryComponent{
+    height:300px;
+    width: 300px;
+    border-radius: 30px;
+    background-color:#e8ead0;
+    box-shadow: 5px 10px 24px #bababa;
+    display: flex;
+    margin: 50px 100px;
+}
+
+.Title {
+    font-family: 'Montserrat';
+    font-size: 28px;
+    margin: 50px;
+}

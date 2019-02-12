@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './posts.css'
 
 class Posts extends Component {
     constructor(props){
@@ -9,8 +10,8 @@ class Posts extends Component {
     }
     render(){
         return (
-            <div>
-                <span>Blog posts are coming soon friends!</span>
+            <div className='PostsComponent'>
+                <span className='coming-soon'>Blog posts are coming soon!</span>
             </div>
         )
     }

@@ -4,7 +4,7 @@ CREATE TABLE products (
     product_image TEXT,
     product_price INTEGER NOT NULL,
     product_description TEXT,
-    product_category VARCHAR(100) NOT NULL
+    product_category INTEGER REFERENCES product_categories (category_id)
 );
 
 CREATE TABLE users (
@@ -17,16 +17,20 @@ CREATE TABLE users (
 
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
-    order_id INTEGER,
+    order_id INTEGER REFERENCES order_items (order_id),
     product_id INTEGER REFERENCES products (product_id),
     quantity INTEGER,
     order_price INTEGER
 );
 
 CREATE TABLE order_items (
-    id SERIAL PRIMARY KEY,
-    order_id INTEGER REFERENCES orders (order_id),
+    order_id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users (user_id),
     total_price INTEGER,
     order_status TEXT
+);
+
+CREATE TABLE product_categories (
+    category_id SERIAL PRIMARY KEY,
+    category_name VARCHAR(100) NOT NULL UNIQUE
 );

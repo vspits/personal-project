@@ -1,17 +1,30 @@
 .Nav {
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(152, 133, 162);
     height: 80px;
     width: 100%;
-    color: white;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .Logo {
     margin-right: auto;
+    padding: 0px 50px;
+    font-family: 'Pacifico';
+    font-size: 38px;
+}
+.nav-links {
+    padding: 0px 25px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.links-container{
     padding: 0px 25px;
 }
 
-.nav-links {
-    padding: 0px 25px;
+.link-tags {
+    text-decoration: none;
+    color: white;
 }
