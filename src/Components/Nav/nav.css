@@ -1,0 +1,17 @@
+.Nav {
+    background-color: rgb(30, 30, 30);
+    height: 80px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.Logo {
+    margin-right: auto;
+    padding: 0px 25px;
+}
+
+.nav-links {
+    padding: 0px 25px;
+}
