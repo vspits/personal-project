@@ -5,7 +5,7 @@ CREATE TABLE products (
     product_price INTEGER NOT NULL,
     product_description TEXT,
     product_category VARCHAR(100) NOT NULL
-)
+);
 
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
@@ -13,7 +13,7 @@ CREATE TABLE users (
     password VARCHAR(25) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     isAdmin VARCHAR(25) NOT NULL
-)
+);
 
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
@@ -21,7 +21,7 @@ CREATE TABLE orders (
     product_id INTEGER REFERENCES products (product_id),
     quantity INTEGER,
     order_price INTEGER
-)
+);
 
 CREATE TABLE order_items (
     id SERIAL PRIMARY KEY,
@@ -29,4 +29,4 @@ CREATE TABLE order_items (
     user_id INTEGER REFERENCES users (user_id),
     total_price INTEGER,
     order_status TEXT
-)
+);
