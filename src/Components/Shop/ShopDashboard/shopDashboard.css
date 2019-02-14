@@ -1,0 +1,11 @@
+
+.Title {
+    font-family: 'Montserrat';
+    font-size: 28px;
+    margin: 25px;
+}
+
+.Categories {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,5 +1,5 @@
 .Nav {
-    background-color: rgb(152, 133, 162);
+    background-image: linear-gradient(to bottom right, rgb(0, 3, 208), rgb(81, 84, 249), rgb(156, 124, 252), rgb(204, 185, 255)) ;
     height: 80px;
     width: 100%;
     display: flex;
@@ -12,6 +12,7 @@
     padding: 0px 50px;
     font-family: 'Pacifico';
     font-size: 38px;
+    font-weight: 0px;
 }
 .nav-links {
     padding: 0px 25px;

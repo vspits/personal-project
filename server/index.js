@@ -39,9 +39,9 @@ app.post(`/auth/register`, auth_ctrl.register)
 app.post(`/auth/logout`, auth_ctrl.logout)
 
 //products
-app.get(`/shop`, shop_ctrl.getCategories)
-app.get(`/shop/category`, shop_ctrl.getProducts)
-app.get(`/shop/category/:product_id`, shop_ctrl.getProduct)
+app.get(`/shop/category`, shop_ctrl.getCategories)
+app.get(`/shop/products`, shop_ctrl.getProducts)
+app.get(`/shop/:product_id`, shop_ctrl.getProduct)
 app.post(`/cart`, shop_ctrl.addToCart)
 
 //cart

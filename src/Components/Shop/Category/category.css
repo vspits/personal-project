@@ -3,13 +3,12 @@
     width: 300px;
     border-radius: 30px;
     background-color:#e8ead0;
-    box-shadow: 5px 10px 24px #bababa;
-    display: flex;
-    margin: 50px 100px;
+    box-shadow: 5px 10px 24px #cecece;
+    margin: 25px;
 }
 
 .Title {
     font-family: 'Montserrat';
     font-size: 28px;
-    margin: 50px;
+    padding: 25px;
 }

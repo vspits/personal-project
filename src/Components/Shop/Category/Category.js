@@ -1,25 +1,14 @@
-import React, {Component} from 'react'
+import React from 'react'
+import {Link} from 'react-router-dom'
 import './category.css'
 
-class Category extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-
-        }
-    }
-
-    render(){
-        return(
-            <div>
-                <p className='Title'>Shop by Category</p>
-
-                <div className='CategoryComponent'>
-                    <span></span>
-                </div>
-
+function Category(props){      
+    return(
+        <div>
+            <div className='CategoryComponent'>
+                <Link to='/shop/products'><p className='Title'>{props.category_name}</p></Link>
             </div>
-        )
-    }
+        </div>
+    )
 }
 export default Category

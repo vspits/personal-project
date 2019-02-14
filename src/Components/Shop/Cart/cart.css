@@ -1,0 +1,12 @@
+.cart-details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cart-labels {
+    padding: 25px;
+}
+
+.cart-component {
+    padding: 50px;
+}

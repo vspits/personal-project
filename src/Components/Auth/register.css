@@ -1,0 +1,17 @@
+.button {
+    background-color: #7540FB;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+.register-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    padding: 25px;
+}
+.Registration {
+    margin: 25px;
+}

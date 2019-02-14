@@ -8,7 +8,7 @@ export default function Nav(props){
 
             <div className='Logo'>
 
-                <Link to='/' className='link-tags'><span className='title'>FancyLogo</span></Link>
+                <Link to='/' className='link-tags'><span className='title'>Cosmicality</span></Link>
 
             </div>
             

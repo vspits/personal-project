@@ -6,7 +6,8 @@ const initialState = {
     product_image: '',
     product_price: 0,
     product_description: '',
-    product_category: 0
+    product_category: 0,
+    
 }
 
 
