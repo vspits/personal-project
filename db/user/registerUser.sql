@@ -9,4 +9,4 @@ insert into users (
     ${username},
     false
 )
-returning email, username;
+returning email, username, user_id, isAdmin;

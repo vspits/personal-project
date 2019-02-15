@@ -57,12 +57,12 @@ class Login extends Component {
                 <br></br>
                 <br></br>
 
-                <input className='inputfield' placeholder='EMAIL'/>
+                <input name='email' type='email' className='inputfield' onChange={this.handleChange} placeholder='EMAIL'/>
                 
                 <br></br>
                 <br></br>
                 
-                <input className='inputfield' placeholder='PASSWORD'/>
+                <input name='password' className='inputfield' onChange={this.handleChange} type='password' placeholder='PASSWORD'/>
                 
                 <br></br>
                 <br></br>
@@ -72,7 +72,7 @@ class Login extends Component {
                 <br></br>
                 <br></br>
 
-                <button className='button'>LOGIN</button>
+                <button className='button' onClick={this.handleLogin}>LOGIN</button>
 
                 <br></br>
                 <br></br>

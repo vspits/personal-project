@@ -12,8 +12,11 @@ module.exports ={
         .then(product => res.status(200).send(product))
         .catch(err => console.log(err))
     },
-    getProduct: () => {
-
+    getProduct: (req, res, next) => {
+        const db = req.app.get('db')
+        const { product_id } = req.params
+        db.get_product([product_id])
+        .then(product => res.status(200).send(product))
     },
     addToCart: () => {
 

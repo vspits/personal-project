@@ -1,0 +1,16 @@
+.ProductComponent {
+    height:350px;
+    width: 350px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 24px #797979;
+    margin: 25px 60px;
+}
+.ParentComponent {
+    display: flex;
+
+}
+.producttitle {
+    font-family: 'Montserrat';
+    font-size: 28px;
+    margin: 25px;
+}
