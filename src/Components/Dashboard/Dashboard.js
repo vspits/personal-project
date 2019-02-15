@@ -1,13 +1,12 @@
 import React from 'react'
+import './dashboard.css'
 import {Link} from 'react-router-dom'
 
 export default function Dashboard(props){
     return (
         <div>
-            <span>Dashboard</span>
-            <br></br>
-            <Link to='/shop'><button>SHOP</button></Link>
-            <Link to='/posts'><button>BLOG</button></Link>
+            <Link to='/shop/category'><button className='dashboard-button'>SHOP</button></Link>
+            <Link to='/posts'><button className='dashboard-button'>BLOG</button></Link>
         </div>
     )
 }

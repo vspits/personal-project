@@ -37,10 +37,11 @@ app.use(sessions({
 app.post(`/auth/login`, auth_ctrl.login)
 app.post(`/auth/register`, auth_ctrl.register)
 app.post(`/auth/logout`, auth_ctrl.logout)
+app.get(`/api/user`, auth_ctrl.getUser)
 
 //products
 app.get(`/shop/category`, shop_ctrl.getCategories)
-app.get(`/shop/products`, shop_ctrl.getProducts)
+app.get(`/shop/products/:category_id`, shop_ctrl.getProducts)
 app.get(`/shop/:product_id`, shop_ctrl.getProduct)
 app.post(`/cart`, shop_ctrl.addToCart)
 

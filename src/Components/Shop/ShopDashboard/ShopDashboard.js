@@ -19,7 +19,6 @@ class ShopDashboard extends Component{
     getCategories(){
         axios.get(`/shop/category`)
             .then(res => {
-                console.log(res.data)
                 this.setState({categories: res.data})
             })
             .catch(err => console.log(err))
@@ -30,7 +29,9 @@ class ShopDashboard extends Component{
             return (
                 <Category 
                     key={category.category_id}
-                    category_name={category.category_name}/>
+                    category_name={category.category_name}
+                    category_image={category.category_image}
+                    category_id={category.category_id}/>
             )
         })
         return(

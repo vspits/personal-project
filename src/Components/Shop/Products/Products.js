@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 
-class Products extends Component{
+class Products extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -11,11 +11,11 @@ class Products extends Component{
     }
 
     componentDidMount(){
-        this.getProducts()
+        this.getProducts(this.props.match.params.category_id)
     }
 
-    getProducts(){
-        axios.get(`/shop/products`)
+    getProducts(category_id){
+        axios.get(`/shop/products/${category_id}`)
         .then(res => {
             this.setState({products: res.data})
         })
@@ -24,17 +24,17 @@ class Products extends Component{
     render(){
         let mappedProducts = this.state.products.map(product => {
             return (
-                <Products 
-                    key={product.product_id}
-                    product_name={product.product_name}
-                    product_image={product.product_image}
-                    product_description={product.product_description}
-                    product_price={product.product_price}/>
+                <div key={product.product_id}>
+                    <p>{product.product_name}</p>
+                    <p>{product.product_image}</p>
+                    <p>{product.product_description}</p>
+                    <p>{product.product_price}</p>
+                </div>
             )
         })
         return (
             <div>
-                {mappedProducts}
+            {mappedProducts}
             </div>
         )
     }

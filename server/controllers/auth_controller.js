@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs')
+
 module.exports = {
     login: async (req, res, next) => {
         
@@ -28,7 +30,7 @@ module.exports = {
         const {email, password, username} = req.body
         const {session} = req
         const db = req.app.get('db')
-
+        
         const hash = bcrypt.hashSync(password, 10)
 
         let newUser = await db.user.registerUser({email: email, password: hash, username: username})
@@ -45,4 +47,14 @@ module.exports = {
         res.sendStatus(200)
 
     },
+    getUser: (req, res, next) => {
+
+        const { user } = req.session
+        if(user){
+            res.status(200).send(user)
+        } else {
+            res.sendStatus(401)
+        }
+
+    }
 }

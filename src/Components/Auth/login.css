@@ -16,3 +16,14 @@
 .Login {
     margin: 25px;
 }
+.inputfield {
+    border: none;
+    border-bottom: 1px solid rgb(154, 154, 157);
+    width: 300px;
+    height: 30px;
+    margin: 5px;
+    outline: none;
+}
+.inputfield:focus {
+    border-bottom: 3px solid rgb(76, 232, 221);
+  }

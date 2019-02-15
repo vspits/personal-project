@@ -1,14 +1,22 @@
 .CategoryComponent{
-    height:300px;
-    width: 300px;
+    height:350px;
+    width: 350px;
     border-radius: 30px;
-    background-color:#e8ead0;
-    box-shadow: 5px 10px 24px #cecece;
+    box-shadow: 5px 10px 24px #797979;
     margin: 25px;
 }
 
-.Title {
+.CategoryTitle {
     font-family: 'Montserrat';
     font-size: 28px;
     padding: 25px;
+    color: white;
+    text-decoration: none;
+    position: absolute;
 }
+/* 
+.parentDiv {
+    background-color: rgba(32, 0, 87, 0.5);
+    z-index: 1;
+    border-radius: 30px;
+} */

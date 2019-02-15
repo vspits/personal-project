@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import './register.css'
-// import {connect} from 'react-redux'
-// import {updateUser} from './../../ducks/users/reducer'
+import {connect} from 'react-redux'
+import {updateUser} from './../../ducks/users/reducer'
 
 
 class Register extends Component {
@@ -12,7 +12,8 @@ class Register extends Component {
         this.state = {
             email: '',
             username: '',
-            password: ''
+            password: '',
+            isAdmin: false
         }
     }
 
@@ -23,11 +24,11 @@ class Register extends Component {
     }
 
     handleRegistration = () => {
-        const { email, password, username } = this.state
-        axios.post('/auth/register', { username, email, password })
+        const { email, password, username, isAdmin } = this.state
+        axios.post('/auth/register', { username, email, password, isAdmin })
             .then(res => {
                 this.props.updateUser(res.data)
-                this.props.history.push(`/shop`)
+                this.props.history.push(`/shop/category`)
             })
       }
 
@@ -39,17 +40,17 @@ class Register extends Component {
                 <br></br>
                 <br></br>
                 
-                <input type='text' name='username' value={this.state.username} onChange={this.handleChange} placeholder='username'/>
+                <input className='inputfield' type='text' name='username' value={this.state.username} onChange={this.handleChange} placeholder='USERNAME'/>
 
                 <br></br>
                 <br></br>
                 
-                <input type='email' name='email' value={this.state.email} onChange={this.handleChange} placeholder='email'/>
+                <input type='email' className='inputfield' name='email' value={this.state.email} onChange={this.handleChange} placeholder='EMAIL'/>
                 
                 <br></br>
                 <br></br>
                 
-                <input type='password' name='password' value={this.state.password} onChange={this.handleChange} placeholder='password'/>
+                <input className='inputfield' type='password' name='password' value={this.state.password} onChange={this.handleChange} placeholder='PASSWORD'/>
                 
                 <br></br>
                 <br></br>
@@ -64,15 +65,18 @@ class Register extends Component {
         )
     }
 }
-export default Register
-
-// const mapStateToProps = (reduxState) => {
-//     return {
-//         email: reduxState.email,
-//         username: reduxState.username,
-//         password: reduxState.password
-//     }
-// }
+// export default Register
 
 
-// export default connect(mapStateToProps, {updateUser})(Register)
+
+
+const mapStateToProps = (reduxState) => {
+    return {
+        email: reduxState.email,
+        username: reduxState.username,
+        password: reduxState.password
+    }
+}
+
+
+export default connect(mapStateToProps, {updateUser})(Register)
