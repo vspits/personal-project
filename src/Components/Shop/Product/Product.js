@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import './product.css'
 
 class Product extends Component {
     constructor(props){
@@ -32,11 +33,30 @@ class Product extends Component {
 
     render(){
         return (
-            <div key={this.state.product[0].product_id}>
-                <p>{this.state.product[0].product_name}</p>
-                <p>{this.state.product[0].product_price}</p>
-                <p>{this.state.product[0].product_image}</p>
-                <p>{this.state.product[0].product_description}</p>
+            <div className='container'>
+
+                <div className='img-container'>
+
+                    <div className='product-image' style={{backgroundImage: `url(${this.state.product[0].product_image})`, backgroundSize: 'cover'}}></div>
+
+                </div>
+
+                <div 
+                    className='info-container' 
+                    key={this.state.product[0].product_id}>
+
+                    <span className='product-title'>{this.state.product[0].product_name}</span>
+
+                    <span className='product-price'>${this.state.product[0].product_price}.00</span>
+
+                    <button className='addtocartbutton'>ADD TO CART</button>
+
+                    <span className='product-description-title'>PRODUCT DESCRIPTION</span>
+
+                    <p className='product-description'>{this.state.product[0].product_description}</p>
+
+                </div>
+
             </div>
         )
     }

@@ -14,13 +14,13 @@ class Cart extends Component {
                 <span className='cart-title'>SHOPPING CART</span>
 
                 <div className='cart-details'>
-                    <span className='cart-labels'>QUANTITY</span>
                     <span className='cart-labels'>ITEM</span>
+                    <span className='cart-labels'>QUANTITY</span>
                     <span className='cart-labels'>PRICE</span>
                 </div>
-                    <span>TOTAL</span>
+                    <span className='cart-total'>TOTAL:</span>
                     <br></br>
-                    <button>CHECKOUT</button>
+                    <button className='checkout-button'>CHECKOUT</button>
             </div>
         )
     }

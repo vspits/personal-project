@@ -52,7 +52,7 @@ class Login extends Component {
     render(){
         return (
             <div className='Login'>
-                <span className='login-title'>Login</span>
+                <span className='login-title'>LOGIN</span>
 
                 <br></br>
                 <br></br>
