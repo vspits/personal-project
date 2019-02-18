@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import { updateUser } from './../../ducks/users/reducer'
+import { updateUser } from '../../ducks/reducers/users_reducer'
 import {connect} from 'react-redux'
 import axios from 'axios'
 import './nav.css'
@@ -40,6 +40,7 @@ class Nav extends Component {
     }
     
     render(){
+        console.log(this.props)
         return (
             <div className='Nav'>
 
@@ -60,10 +61,12 @@ class Nav extends Component {
                     {/* <Link to='/about' className='link-tags'><span className='nav-links'>ABOUT</span></Link> */}
 
 
+                    
                     {(!this.props.user_id)
 
-                        ? <Link to='/auth/login' className='link-tags'><span className='nav-links'>LOGIN</span></Link>
 
+                        ? <Link to='/auth/login' className='link-tags'><span className='nav-links'>LOGIN</span></Link>  
+                        
                         : <Link to='/auth/logout' className='link-tags'><span onClick={this.logout} className='nav-links'>LOGOUT</span></Link>}
 
                 </div>
@@ -73,7 +76,7 @@ class Nav extends Component {
 }
 
 const mapStateToProps = reduxState => {
-    const { user_id, username, email, isAdmin } = reduxState
+    const { user_id, username, email, isAdmin } = reduxState.users_reducer
     return {
         user_id,
         username,

@@ -18,11 +18,23 @@ module.exports ={
         db.get_product({product_id})
         .then(product => res.status(200).send(product))
     },
-    addToCart: () => {
-
+    addToCart: (req, res, next) => {
+        // const db = req.app.get('db')
+        // const { product_id, quantity, order_price } = req.params
+        // db.add_to_order({product_id, quantity, order_price})
+        // .then(item => res.status(200).send(item))
     },
-    getCart: () => {
+    getCart: (req, res, next) => {
+        // const db = req.app.get('db')
+        // db.get_user_order()
+        // .then(cart => res.status(200).send(cart))
 
+        // const { cart } = req.session
+        // if(cart){
+        //     res.status(200).send(cart)
+        // } else {
+        //     res.sendStatus(401)
+        // }
     },
     updateQuantity: () => {
         

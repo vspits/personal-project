@@ -15,7 +15,7 @@ const initialState = {
 
 // // // REDUCER FUNCTION // // //
 
-export default function reducer(state = initialState, action){
+export default function blog_reducer(state = initialState, action){
     const { type, payload } = action
     switch(type){
         default:

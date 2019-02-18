@@ -16,18 +16,17 @@ CREATE TABLE users (
 );
 
 CREATE TABLE orders (
-    id SERIAL PRIMARY KEY,
-    order_id INTEGER REFERENCES order_items (order_id),
-    product_id INTEGER REFERENCES products (product_id),
-    quantity INTEGER,
-    order_price INTEGER
+    order_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users (user_id),
+    checked_out BOOLEAN NOT NULL DEFAULT FALSE,
+    total_price INTEGER
 );
 
 CREATE TABLE order_items (
-    order_id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users (user_id),
-    total_price INTEGER,
-    order_status TEXT
+    item_id SERIAL PRIMARY KEY,
+    order_id INTEGER REFERENCES orders (order_id),
+    product_id INTEGER REFERENCES products (product_id),
+    quantity INTEGER
 );
 
 CREATE TABLE product_categories (

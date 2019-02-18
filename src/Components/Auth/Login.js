@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import {updateUser} from './../../ducks/users/reducer'
+import {updateUser} from '../../ducks/reducers/users_reducer'
 import './login.css'
 import { connect } from 'react-redux';
 
@@ -85,7 +85,7 @@ class Login extends Component {
 
 const mapStateToProps = reduxState => {
     return {
-        user_id: reduxState.user_id
+        user_id: reduxState.users_reducer.user_id
     }
 }
 

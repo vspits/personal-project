@@ -9,7 +9,7 @@ const initialState = {
 
 const UPDATE_USER = 'UPDATE_USER'
 
-export default function reducer(state=initialState, action){
+export default function users_reducer(state=initialState, action){
     const {type, payload} = action
     switch(type){
         case UPDATE_USER:

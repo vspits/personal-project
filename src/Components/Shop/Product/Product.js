@@ -22,12 +22,12 @@ class Product extends Component {
     }
 
     getProduct(product_id){
-        console.log(product_id)
         axios.get(`/shop/${product_id}`)
-        .then(res => {
-            console.log(res.data)
-            this.setState({product: res.data})
-        })
+        .then(res => {this.setState({product: res.data})})
+    }
+
+    addToCart(){
+        
     }
 
 

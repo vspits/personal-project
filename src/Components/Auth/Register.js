@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import './register.css'
 import {connect} from 'react-redux'
-import {updateUser} from './../../ducks/users/reducer'
+import {updateUser} from '../../ducks/reducers/users_reducer'
 
 
 class Register extends Component {
