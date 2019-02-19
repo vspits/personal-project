@@ -19,10 +19,10 @@ module.exports ={
         .then(product => res.status(200).send(product))
     },
     addToCart: (req, res, next) => {
-        // const db = req.app.get('db')
-        // const { product_id, quantity, order_price } = req.params
-        // db.add_to_order({product_id, quantity, order_price})
-        // .then(item => res.status(200).send(item))
+        const db = req.app.get('db')
+        const { } = req.params
+        db.add_to_order({ })
+        .then(item => res.status(200).send(item))
     },
     getCart: (req, res, next) => {
         // const db = req.app.get('db')
