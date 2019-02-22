@@ -43,7 +43,7 @@ app.get(`/api/user`, auth_ctrl.getUser)
 app.get(`/shop/category`, shop_ctrl.getCategories)
 app.get(`/shop/products/:category_id`, shop_ctrl.getProducts)
 app.get(`/shop/:product_id`, shop_ctrl.getProduct)
-app.post(`/cart`, shop_ctrl.addToCart)
+app.post(`/cart/:user_id/:product_id`, shop_ctrl.addToCart)
 
 //cart
 app.get(`/cart`, shop_ctrl.getCart)

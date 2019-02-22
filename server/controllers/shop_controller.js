@@ -7,7 +7,7 @@ module.exports ={
     },
     getProducts: (req, res, next) => {
         const db = req.app.get('db')
-        const { category_id }= req.params
+        const { category_id } = req.params
         db.get_products({category_id})
         .then(product => res.status(200).send(product))
         .catch(err => console.log(err))
@@ -17,12 +17,28 @@ module.exports ={
         const { product_id } = req.params
         db.get_product({product_id})
         .then(product => res.status(200).send(product))
+        .catch(err => console.log(err))
     },
-    addToCart: (req, res, next) => {
+    addToCart: async (req, res, next) => {
         const db = req.app.get('db')
-        const { } = req.params
-        db.add_to_order({ })
-        .then(item => res.status(200).send(item))
+        const { product_id, user_id } = req.params
+
+        let findOrder = await db.cart.find_order({user_id})
+
+        if (findOrder.length === 0) {
+            let order_id = await db.cart.add_order_id({user_id})
+            db.cart.add_to_order({ order_id: order_id[0].order_id, product_id })
+                .then(item => res.sendStatus(200))
+        } else {
+            let arr = findOrder.filter(item => {
+                return (!item.checked_out)
+            })
+            if(arr[0]){
+
+            } else {
+                
+            }
+        }
     },
     getCart: (req, res, next) => {
         // const db = req.app.get('db')

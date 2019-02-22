@@ -51,6 +51,8 @@ class Nav extends Component {
                 
                 <div className='links-container'>
 
+                    <i className="fas fa-bars"></i>
+
                     <Link to='/cart' className='link-tags'><span className='nav-links'>CART</span></Link>
 
                     <Link to='/shop/category' className='link-tags'><span className='nav-links'>SHOP</span></Link>

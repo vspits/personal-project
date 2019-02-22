@@ -1,11 +1,9 @@
-INSERT INTO TABLE order_list (
+INSERT INTO order_items (
     order_id,
     product_id,
-    quantity,
+    quantity
 ) VALUES (
     ${order_id},
     ${product_id},
-    ${quantity}
+    1
 );
-
-

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import './product.css'
+import { connect } from 'react-redux'
 
 class Product extends Component {
     constructor(props){
@@ -15,6 +16,7 @@ class Product extends Component {
             }]
         }
         this.getProduct = this.getProduct.bind(this)
+        this.addToCart = this.addToCart.bind(this)
     }
 
     componentDidMount(){
@@ -27,7 +29,14 @@ class Product extends Component {
     }
 
     addToCart(){
-        
+        const {user_id} = this.props
+        const {product_id} = this.props.match.params
+        axios.post(`/cart/${user_id}/${product_id}`)
+        .then(res => {
+            console.log(res)
+            
+        })
+        .catch(err => console.log(err))
     }
 
 
@@ -49,7 +58,7 @@ class Product extends Component {
 
                     <span className='product-price'>${this.state.product[0].product_price}.00</span>
 
-                    <button className='addtocartbutton'>ADD TO CART</button>
+                    <button className='addtocartbutton' onClick={() => this.addToCart()}>ADD TO CART</button>
 
                     <span className='product-description-title'>PRODUCT DESCRIPTION</span>
 
@@ -62,4 +71,11 @@ class Product extends Component {
     }
 }
 
-export default Product
+const mapStateToProps = (reduxState) => {
+    const {user_id} = reduxState.users_reducer
+    return {
+        user_id
+    }
+}
+
+export default connect(mapStateToProps)(Product)
