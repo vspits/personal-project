@@ -42,3 +42,15 @@
     font-size: 18px;
     padding: 25px;
 }
+
+@media (min-width: 350px) and (max-width: 990px){
+    .cart-details {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    .cart-details {
+        margin: 10px;
+    }
+}

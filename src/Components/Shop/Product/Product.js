@@ -31,6 +31,7 @@ class Product extends Component {
     addToCart(){
         const {user_id} = this.props
         const {product_id} = this.props.match.params
+        
         axios.post(`/cart/${user_id}/${product_id}`)
         .then(res => {
             console.log(res)

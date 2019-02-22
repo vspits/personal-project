@@ -9,3 +9,11 @@
     display: flex;
     justify-content: space-around;
 }
+
+@media (max-width: 990px){
+    .Categories {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

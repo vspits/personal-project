@@ -22,10 +22,9 @@ module.exports ={
     addToCart: async (req, res, next) => {
         const db = req.app.get('db')
         const { product_id, user_id } = req.params
-
         let findOrder = await db.cart.find_order({user_id})
 
-        if (findOrder.length === 0) {
+        if (findOrder.length === 0) { // when the user has no open carts
             let order_id = await db.cart.add_order_id({user_id})
             db.cart.add_to_order({ order_id: order_id[0].order_id, product_id })
                 .then(item => res.sendStatus(200))
@@ -33,10 +32,14 @@ module.exports ={
             let arr = findOrder.filter(item => {
                 return (!item.checked_out)
             })
-            if(arr[0]){
-
-            } else {
+            if(arr[0]){ // if they have an open cart
+                db.cart.add_to_order({ order_id: arr[0].order_id, product_id })
+                    .then(item => res.sendStatus(200))
                 
+            } else { // when the user has no open carts
+                let order_id = await db.cart.add_order_id({user_id})
+                db.cart.add_to_order({ order_id: order_id[0].order_id, product_id })
+                    .then(item => res.sendStatus(200))
             }
         }
     },

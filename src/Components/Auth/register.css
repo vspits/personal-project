@@ -30,3 +30,9 @@
 .inputfield:focus {
     border-bottom: 3px solid rgb(76, 232, 221);
   }
+
+@media (max-width: 350px) {
+    .inputfield {
+        width: 250px;
+    }
+}

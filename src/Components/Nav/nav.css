@@ -55,4 +55,14 @@
     .Nav {
         width: 100%;
     }
+    .Logo {
+        padding: 0px 25px;
+    }
+}
+
+@media (max-width: 350px) {
+    .Logo {
+        font-size: 34px;
+        padding: 0px 25px;
+    }
 }
