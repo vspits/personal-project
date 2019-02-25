@@ -11,7 +11,7 @@ const shop_ctrl = require('./controllers/shop_controller')
 const blog_ctrl = require('./controllers/blog_controller')
 
 const app = express()
-const { SERVER_PORT, DB_CONNECTION, SESSION_SECRET } = process.env
+const { SERVER_PORT, DB_CONNECTION, SESSION_SECRET, NODE_ENV } = process.env
 
 // // // // // MIDDLEWARE // // // // //
 
@@ -28,6 +28,15 @@ app.use(sessions({
     saveUninitialized: false,
     maxAge: null
 }))
+
+app.use( async (req, res, next) => {
+    if(!req.session.user && NODE_ENV === 'development'){
+        const db = req.app.get('db')
+        let user = await db.user.login({email: 'v@gmail.com'})
+        req.session.user = user[0]
+    }
+    next()
+})
 
 
 

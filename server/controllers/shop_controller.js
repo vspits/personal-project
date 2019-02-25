@@ -44,16 +44,12 @@ module.exports ={
         }
     },
     getCart: (req, res, next) => {
-        // const db = req.app.get('db')
-        // db.get_user_order()
-        // .then(cart => res.status(200).send(cart))
-
-        // const { cart } = req.session
-        // if(cart){
-        //     res.status(200).send(cart)
-        // } else {
-        //     res.sendStatus(401)
-        // }
+        const db = req.app.get('db')
+        const { user_id } = req.session.user
+        
+        db.cart.get_user_order({ user_id })
+        .then(cart => res.status(200).send(cart))
+        .catch(err => console.log(err))
     },
     updateQuantity: () => {
         
