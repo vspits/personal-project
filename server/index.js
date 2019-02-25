@@ -32,7 +32,7 @@ app.use(sessions({
 app.use( async (req, res, next) => {
     if(!req.session.user && NODE_ENV === 'development'){
         const db = req.app.get('db')
-        let user = await db.user.login({email: 'v@gmail.com'})
+        let user = await db.user.login({email: 'j@gmail.com'})
         req.session.user = user[0]
     }
     next()
@@ -56,7 +56,7 @@ app.post(`/cart/:user_id/:product_id`, shop_ctrl.addToCart)
 
 //cart
 app.get(`/cart`, shop_ctrl.getCart)
-app.patch(`/cart/:quantity`, shop_ctrl.updateQuantity)
+app.patch(`/cart/:quantity/:item_id`, shop_ctrl.updateQuantity)
 
 //blog
 app.get(`/posts`, blog_ctrl.getAllPosts)

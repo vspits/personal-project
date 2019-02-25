@@ -48,10 +48,16 @@ module.exports ={
         const { user_id } = req.session.user
         
         db.cart.get_user_order({ user_id })
-        .then(cart => res.status(200).send(cart))
-        .catch(err => console.log(err))
+            .then(cart => res.status(200).send(cart))
+            .catch(err => console.log(err))
     },
-    updateQuantity: () => {
-        
-    },
+    updateQuantity: (req, res, next) => {
+        const db = req.app.get('db')
+        const {quantity, item_id} = req.params
+
+        db.cart.update_quantity({quantity, item_id})
+            .then(item => res.status(200).send(item))
+            .catch(err => console.log(err))
+
+    }
 }
