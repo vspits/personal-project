@@ -18,6 +18,7 @@ class Cart extends Component {
         }
         this.getCart = this.getCart.bind(this)
         this.updateQuantity = this.updateQuantity.bind(this)
+        this.calculateTotal = this.calculateTotal.bind(this)
     }
 
     componentDidMount(){
@@ -32,15 +33,16 @@ class Cart extends Component {
             .catch(err => console.log(err))
     }
 
-    calculateTotal(){
-        
+    calculateTotal(price, quantity){
+        let total = price * quantity
+        return total
     }
 
     updateQuantity(quantityChange, item){
         console.log(item)
         const newQuantity = item.quantity + quantityChange
         if(newQuantity<0){
-            
+            alert(`Cannot have quantity below 0`)
         } else {
             axios.patch(`/cart/${newQuantity}/${item.item_id}`)
             .then(res => this.getCart())
@@ -89,7 +91,7 @@ class Cart extends Component {
                     {mappedCart}
                 </div>
                 <br/>
-                <span className='cart-total'>TOTAL:</span>
+                <span className='cart-total'>TOTAL: {() => this.calculateTotal()}</span>
                 <br/>
                 <button className='checkout-button'>CHECKOUT</button>
             </div>

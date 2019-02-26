@@ -1,0 +1,17 @@
+.admin-tools-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    padding: 25px;
+}
+
+.AdminTools {
+    margin: 25px;
+}
+
+#description-textarea {
+    height: 200px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: none;
+}

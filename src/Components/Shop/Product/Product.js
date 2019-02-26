@@ -17,6 +17,7 @@ class Product extends Component {
         }
         this.getProduct = this.getProduct.bind(this)
         this.addToCart = this.addToCart.bind(this)
+        this.deleteProduct = this.deleteProduct.bind(this)
     }
 
     componentDidMount(){
@@ -34,10 +35,22 @@ class Product extends Component {
         
         axios.post(`/cart/${user_id}/${product_id}`)
         .then(res => {
-            console.log(res)
+            alert('Product is added to your cart')
             
         })
         .catch(err => console.log(err))
+    }
+
+    deleteProduct(){
+        let {product_id} = this.props.match.params
+        console.log(this.props.match.params)
+        product_id = parseInt(product_id)
+
+        axios.delete(`/delete/${product_id}`)
+            .then(res => {
+                this.props.history.push(`/shop/category`)
+            })
+            .catch(err => console.log(err))
     }
 
 
@@ -65,6 +78,14 @@ class Product extends Component {
 
                     <p className='product-description'>{this.state.product[0].product_description}</p>
 
+                    <div>
+                    {
+                        (this.props.isadmin) &&
+                        
+                        <button onClick={() => this.deleteProduct()} className='delete-product-button'>Delete Product</button>
+                    }
+                    </div>
+
                 </div>
 
             </div>
@@ -73,9 +94,10 @@ class Product extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
-    const {user_id} = reduxState.users_reducer
+    const {user_id, isadmin} = reduxState.users_reducer
     return {
-        user_id
+        user_id,
+        isadmin
     }
 }
 

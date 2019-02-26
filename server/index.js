@@ -32,11 +32,12 @@ app.use(sessions({
 app.use( async (req, res, next) => {
     if(!req.session.user && NODE_ENV === 'development'){
         const db = req.app.get('db')
-        let user = await db.user.login({email: 'j@gmail.com'})
+        let user = await db.user.login({email: 'v@gmail.com'})
         req.session.user = user[0]
     }
     next()
 })
+
 
 
 
@@ -53,6 +54,9 @@ app.get(`/shop/category`, shop_ctrl.getCategories)
 app.get(`/shop/products/:category_id`, shop_ctrl.getProducts)
 app.get(`/shop/:product_id`, shop_ctrl.getProduct)
 app.post(`/cart/:user_id/:product_id`, shop_ctrl.addToCart)
+
+//admin feats
+app.delete(`/delete/:product_id`, shop_ctrl.deleteProduct)
 
 //cart
 app.get(`/cart`, shop_ctrl.getCart)

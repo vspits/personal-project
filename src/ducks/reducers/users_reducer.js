@@ -4,7 +4,7 @@ const initialState = {
     username: '',
     password: '',
     email:'',
-    isAdmin: false
+    isadmin: false
 }
 
 const UPDATE_USER = 'UPDATE_USER'
@@ -13,8 +13,8 @@ export default function users_reducer(state=initialState, action){
     const {type, payload} = action
     switch(type){
         case UPDATE_USER:
-            const { user_id, username, password, email, isAdmin } = payload
-            return {...state, user_id, username, password, email, isAdmin}
+            const { user_id, username, password, email, isadmin } = payload
+            return {...state, user_id, username, password, email, isadmin}
         default:
             return state
     }

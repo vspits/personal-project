@@ -61,6 +61,9 @@
 .addtocartbutton:hover {
     background-image: linear-gradient(to bottom,  rgb(216, 119, 0), rgb(255, 191, 0), rgb(255, 251, 122));
 }
+.delete-product-button {
+    width: 30%;
+}
 
 @media (max-width: 350px) {
     .container {

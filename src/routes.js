@@ -10,6 +10,7 @@ import ForgotPassword from './Components/Auth/ForgotPassword'
 import ShopDashboard from './Components/Shop/ShopDashboard/ShopDashboard';
 import Products from './Components/Shop/Products/Products'
 import Product from './Components/Shop/Product/Product'
+import AdminTools from './Components/Auth/AdminTools/AdminTools';
 
 export default (
     <Switch>
@@ -21,6 +22,7 @@ export default (
         <Route path='/auth/login' component={Login}/>
         <Route path='/auth/register' component={Register}/>
         <Route path='/forgotpassword' component={ForgotPassword}/>
+        <Route path='/adminTools' component={AdminTools} />
         
         {/* SHOP */}
         <Route path='/shop/category' component={ShopDashboard}/>

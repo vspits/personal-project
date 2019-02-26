@@ -53,6 +53,15 @@ class Nav extends Component {
 
                     <i className="fas fa-bars"></i>
 
+                    {
+                        this.props.isadmin &&                       
+                            
+                            <Link to='/adminTools' className='link-tags'><span className='nav-links'>TOOLS</span></Link>
+                        
+                    }
+
+
+
                     <Link to='/cart' className='link-tags'><span className='nav-links'>CART</span></Link>
 
                     <Link to='/shop/category' className='link-tags'><span className='nav-links'>SHOP</span></Link>
@@ -77,12 +86,12 @@ class Nav extends Component {
 }
 
 const mapStateToProps = reduxState => {
-    const { user_id, username, email, isAdmin } = reduxState.users_reducer
+    const { user_id, username, email, isadmin } = reduxState.users_reducer
     return {
         user_id,
         username,
         email,
-        isAdmin
+        isadmin
     }
 }
 
