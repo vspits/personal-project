@@ -89,8 +89,13 @@ class Cart extends Component {
                 <div>
                     {mappedCart}
                 </div>
-                <br/>
-                {/* <span className='cart-total'>TOTAL: {() => this.calculateTotal()}</span> */}
+
+                <br />
+                <span className='cart-total'>SUBTOTAL:</span>
+                <br />
+                <span className='cart-total'>TAXES: </span>
+                <br />
+                <span className='cart-total'>TOTAL: {() => this.calculateTotal()}</span>
                 <br/>
                 <Link to='/checkout'><button className='checkout-button'>CHECKOUT</button></Link>
                 

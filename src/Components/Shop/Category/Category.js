@@ -8,11 +8,11 @@ function Category(props){
             <Link to={`/shop/products/${props.category_id}`}>
                 <div 
                     className='CategoryComponent' 
-                    style={{backgroundImage: `url(${props.category_image})`, backgroundSize: 'cover', position: 'relative', zIndex:'-1', backgroundColor: 'rgb(0, 0, 0, 0.5)'}}
+                    style={{backgroundImage: `url(${props.category_image})`, backgroundSize: 'cover', position: 'relative'}}
                 >
-
+                <div className='baby-div'>
                 <p className='CategoryTitle'>{props.category_name}</p>
-
+                </div>
 
             </div></Link>
         </div>

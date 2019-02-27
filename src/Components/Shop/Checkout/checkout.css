@@ -7,3 +7,14 @@
 .payment-container {
     margin: 50px 200px;
 }
+
+@media (max-width: 350px){
+    .payment-container{
+        margin: 25px 15px;
+    }
+}
+@media (min-width: 350px) and (max-width: 990px){
+    .payment-container {
+        margin: 25px 20px;
+    }
+}
