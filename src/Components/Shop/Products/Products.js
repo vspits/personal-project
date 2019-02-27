@@ -26,14 +26,14 @@ class Products extends Component {
     render(){
         let mappedProducts = this.state.products.map(product => {
             return (
-                <Link to={`/shop/${product.product_id}`}>
+                <Link to={`/shop/${product.product_id}`} className='product-links'>
                 <div 
                     className='ProductComponent'
                     style={{backgroundImage: `url(${product.product_image})`, backgroundSize: 'cover'}}
                     key={product.product_id}>
 
-                    <p>{product.product_name}</p>
-                    <p>${product.product_price}.00</p>
+                    <p className='product-name'>{product.product_name}</p>
+                    <p className='product-price'>${product.product_price}.00</p>
                 </div></Link>
             )
         })

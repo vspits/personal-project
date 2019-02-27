@@ -5,13 +5,30 @@
     box-shadow: 5px 10px 24px #797979;
     margin: 25px 60px;
 }
+
+.ProductComponent:hover {
+    background-image: rgba(35,35,35,0.3);
+}
+
 .ParentComponent {
     display: flex;
 }
+
 .producttitle {
     font-family: 'Montserrat';
     font-size: 28px;
     margin: 25px;
+}
+
+.product-name {
+    font-family: 'Montserrat';
+    font-size: 28px;
+    padding: 25px;
+}
+
+.product-links {
+    text-decoration: none;
+    color: rgb(35, 35, 35);
 }
 
 @media (max-width: 990px){

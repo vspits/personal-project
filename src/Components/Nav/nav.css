@@ -1,5 +1,6 @@
 .Nav {
-    background-image: linear-gradient(to bottom right, rgb(0, 3, 208), rgb(81, 84, 249), rgb(156, 124, 252), rgb(204, 185, 255)) ;
+    /* background-image: linear-gradient(to bottom right, rgb(0, 3, 208), rgb(81, 84, 249), rgb(156, 124, 252), rgb(204, 185, 255)) ; */
+    background-color: rgb(28, 28, 28);
     height: 80px;
     width: 100%;
     display: flex;

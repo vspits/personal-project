@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {CardElement, injectStripe} from 'react-stripe-elements'
+import {CardElement, injectStripe, Elements, StripeProvider} from 'react-stripe-elements'
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -26,11 +26,16 @@ class CheckoutForm extends Component {
     if (this.state.complete) return <h1>Purchase Complete</h1>
 
     return (
-      <div className="checkout">
-        <p>Would you like to complete the purchase?</p>
-        <CardElement />
-        <button onClick={this.submit}>Complete Payment</button>
-      </div>
+        <StripeProvider apiKey="pk_test_FufTuEYTSPj8ORgVRfP930bA">
+            <div className="checkout">
+                <h1>PAYMENT</h1>
+                <p>Would you like to complete the purchase?</p>
+                <Elements>
+                    <CardElement />
+                </Elements>
+                <button onClick={this.submit}>Submit Payment</button>
+            </div>
+        </StripeProvider>
     )
 
   }

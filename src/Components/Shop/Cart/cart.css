@@ -10,10 +10,11 @@
     border-radius: 10px;
     text-decoration: underline;
 }
+
 .cart-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
-    padding: 25px;
+    margin: 25px;
 }
 
 .cart-component {
@@ -22,7 +23,7 @@
     
 }
 .checkout-button {
-    background-image: linear-gradient(to bottom, #7540FB, rgb(156, 124, 252), rgb(187, 163, 254));
+    background-image: linear-gradient(to bottom, rgb(39, 93, 255), rgb(73, 161, 255), rgb(77, 220, 252));
     height: 50px;
     width: 200px;
     border-radius: 30px;
@@ -34,7 +35,7 @@
 }
 
 .checkout-button:hover {
-    background-image: linear-gradient(to bottom,  rgb(216, 119, 0), rgb(255, 191, 0), rgb(255, 251, 122));
+    background-image: linear-gradient(to bottom, rgb(31, 73, 199), rgb(46, 110, 177), rgb(48, 151, 172));
 }
 
 .cart-total {

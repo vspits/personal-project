@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
 import './cart.css'
 import axios from 'axios'
-import { connect } from 'react-redux';
-import {Elements, StripeProvider} from 'react-stripe-elements';
-import CheckoutForm from './../CheckoutForm/CheckoutForm'
-
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class Cart extends Component {
     constructor(props){
@@ -75,7 +73,6 @@ class Cart extends Component {
         })
 
         return (
-            <StripeProvider apiKey="pk_test_FufTuEYTSPj8ORgVRfP930bA">
             <div className='cart-component'>
                 <span className='cart-title'>SHOPPING CART</span>
 
@@ -94,16 +91,10 @@ class Cart extends Component {
                 </div>
                 <br/>
                 {/* <span className='cart-total'>TOTAL: {() => this.calculateTotal()}</span> */}
-                {/* <br/>
-                <button className='checkout-button'>CHECKOUT</button> */}
-                <div className="example">
-                    <h1>PAYMENT</h1>
-                    <Elements>
-                        <CheckoutForm />
-                    </Elements>
-                </div>
+                <br/>
+                <Link to='/checkout'><button className='checkout-button'>CHECKOUT</button></Link>
+                
             </div>
-            </StripeProvider>
         )
     }
 }

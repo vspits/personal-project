@@ -11,6 +11,7 @@ import ShopDashboard from './Components/Shop/ShopDashboard/ShopDashboard';
 import Products from './Components/Shop/Products/Products'
 import Product from './Components/Shop/Product/Product'
 import AdminTools from './Components/Auth/AdminTools/AdminTools';
+import CheckoutForm from './Components/Shop/CheckoutForm/CheckoutForm'
 
 export default (
     <Switch>
@@ -29,6 +30,7 @@ export default (
         <Route path='/shop/products/:category_id' component={Products}/>
         <Route path='/shop/:product_id' component={Product}/>
         <Route path='/cart' component={Cart}/>
+        <Route path='/checkout' component={CheckoutForm} />
 
 
         {/* BLOG */}
