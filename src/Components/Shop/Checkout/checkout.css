@@ -1,0 +1,9 @@
+.payment-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    margin: 25px;
+    padding: 25px;
+}
+.payment-container {
+    margin: 50px 200px;
+}

@@ -1,0 +1,21 @@
+.payment-button {
+    background-image: linear-gradient(to bottom, rgb(39, 93, 255), rgb(73, 161, 255), rgb(77, 220, 252));
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin: 50px auto;
+    outline: none;
+}
+
+.payment-button:hover{
+    background-image: linear-gradient(to bottom, rgb(31, 73, 199), rgb(46, 110, 177), rgb(48, 151, 172));
+}
+
+.payment-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin: 25px;
+}

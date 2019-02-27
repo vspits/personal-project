@@ -7,11 +7,11 @@ import Login from './Components/Auth/Login'
 import Posts from './Components/Blog/Posts/Posts'
 import Register from './Components/Auth/Register'
 import ForgotPassword from './Components/Auth/ForgotPassword'
-import ShopDashboard from './Components/Shop/ShopDashboard/ShopDashboard';
+import ShopDashboard from './Components/Shop/ShopDashboard/ShopDashboard'
 import Products from './Components/Shop/Products/Products'
 import Product from './Components/Shop/Product/Product'
-import AdminTools from './Components/Auth/AdminTools/AdminTools';
-import CheckoutForm from './Components/Shop/CheckoutForm/CheckoutForm'
+import AdminTools from './Components/Auth/AdminTools/AdminTools'
+import Checkout from './Components/Shop/Checkout/Checkout'
 
 export default (
     <Switch>
@@ -30,7 +30,7 @@ export default (
         <Route path='/shop/products/:category_id' component={Products}/>
         <Route path='/shop/:product_id' component={Product}/>
         <Route path='/cart' component={Cart}/>
-        <Route path='/checkout' component={CheckoutForm} />
+        <Route path='/checkout' component={Checkout} />
 
 
         {/* BLOG */}
