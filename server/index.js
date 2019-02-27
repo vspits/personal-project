@@ -11,11 +11,13 @@ const shop_ctrl = require('./controllers/shop_controller')
 const blog_ctrl = require('./controllers/blog_controller')
 
 const app = express()
-const { SERVER_PORT, DB_CONNECTION, SESSION_SECRET, NODE_ENV } = process.env
+const { SERVER_PORT, DB_CONNECTION, SESSION_SECRET, NODE_ENV, SECRET_KEY } = process.env
+const stripe = require('stripe')(`${SECRET_KEY}`)
 
 // // // // // MIDDLEWARE // // // // //
 
 app.use(json())
+app.use(require('body-parser').text())
 
 massive(DB_CONNECTION).then(db => {
     app.set('db', db)
@@ -43,6 +45,22 @@ app.use( async (req, res, next) => {
 
 // // // // // ENDPOINTS // // // // //
 
+//stripe
+app.post("/charge", async (req, res, next) => {
+    try {
+      let {status} = await stripe.charges.create({
+        amount: 2000,
+        currency: "usd",
+        description: "An example charge",
+        source: req.body
+      })
+  
+      res.json({status})
+    } catch (err) {
+      res.status(500).end()
+    }
+})
+
 //authentication
 app.post(`/auth/login`, auth_ctrl.login)
 app.post(`/auth/register`, auth_ctrl.register)
@@ -57,6 +75,7 @@ app.post(`/cart/:user_id/:product_id`, shop_ctrl.addToCart)
 
 //admin feats
 app.delete(`/delete/:product_id`, shop_ctrl.deleteProduct)
+app.post(`/add/product`, shop_ctrl.addProduct)
 
 //cart
 app.get(`/cart`, shop_ctrl.getCart)

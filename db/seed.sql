@@ -119,3 +119,18 @@ insert into products (
     'Though it’s thought of as the stone of love, it’s not just romantic love that rose quartz crystal embodies. The rose quartz stone meaning is one of unconditional love. The way it facilitates love entering your life is through it’s ability to bring your consciousness to a higher level. Helping you to forgive, understand and see fights or situations from a different perspective, rose quartz healing properties will imbue you with the wisdom to deepen your connection with your partner. In that same way, rose quartz properties provide gentle energy that assists you in recognizing your own need for compassion. It allows you to see that you deserve forgiveness and understanding from yourself. Associated with the element of water, rose quartz healing properties are naturally fluid. They wash out toxic energies and emotions that you have trapped inside of you.',
     2
 );
+
+
+insert into products (
+    product_name,
+    product_image,
+    product_price,
+    product_description,
+    product_category
+) values (
+    'Obsidian',
+    'https://homecomingbook.files.wordpress.com/2013/05/obsidian-copy.png',
+    4,
+    'Obsidian is a naturally occurring volcanic glass formed as an extrusive igneous rock. Obsidian is produced when felsic lava extruded from a volcano cools rapidly with minimal crystal growth.',
+    1
+);

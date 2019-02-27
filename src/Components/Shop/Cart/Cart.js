@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import './cart.css'
 import axios from 'axios'
 import { connect } from 'react-redux';
-import { qtyUp, qtyDown } from '../../../ducks/reducers/shop_reducer'
+import {Elements, StripeProvider} from 'react-stripe-elements';
+import CheckoutForm from './../CheckoutForm/CheckoutForm'
+
 
 class Cart extends Component {
     constructor(props){
@@ -18,7 +20,7 @@ class Cart extends Component {
         }
         this.getCart = this.getCart.bind(this)
         this.updateQuantity = this.updateQuantity.bind(this)
-        this.calculateTotal = this.calculateTotal.bind(this)
+        // this.calculateTotal = this.calculateTotal.bind(this)
     }
 
     componentDidMount(){
@@ -33,10 +35,9 @@ class Cart extends Component {
             .catch(err => console.log(err))
     }
 
-    calculateTotal(price, quantity){
-        let total = price * quantity
-        return total
-    }
+    // calculateTotal(){
+    //     this.product_price * this.quantity
+    // }
 
     updateQuantity(quantityChange, item){
         console.log(item)
@@ -74,6 +75,7 @@ class Cart extends Component {
         })
 
         return (
+            <StripeProvider apiKey="pk_test_FufTuEYTSPj8ORgVRfP930bA">
             <div className='cart-component'>
                 <span className='cart-title'>SHOPPING CART</span>
 
@@ -91,10 +93,17 @@ class Cart extends Component {
                     {mappedCart}
                 </div>
                 <br/>
-                <span className='cart-total'>TOTAL: {() => this.calculateTotal()}</span>
-                <br/>
-                <button className='checkout-button'>CHECKOUT</button>
+                {/* <span className='cart-total'>TOTAL: {() => this.calculateTotal()}</span> */}
+                {/* <br/>
+                <button className='checkout-button'>CHECKOUT</button> */}
+                <div className="example">
+                    <h1>PAYMENT</h1>
+                    <Elements>
+                        <CheckoutForm />
+                    </Elements>
+                </div>
             </div>
+            </StripeProvider>
         )
     }
 }
@@ -107,4 +116,4 @@ const mapStateToProps = (reduxState) => {
     }
 }
 
-export default connect(mapStateToProps, { qtyUp, qtyDown })(Cart)
+export default connect(mapStateToProps)(Cart)

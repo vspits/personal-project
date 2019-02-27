@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 import './adminTools.css'
+import { addProduct } from '../../../ducks/reducers/shop_reducer'
+import { connect } from 'react-redux';
+import axios from 'axios';
+
 
 class AdminTools extends Component {
     constructor(props){
@@ -7,6 +11,22 @@ class AdminTools extends Component {
         this.state = {
 
         }
+    }
+
+    handleChange(prop, value){
+        this.setState({[prop]: value})
+    }
+    
+    addProduct(){
+        const {product_name, product_image, product_price, product_description, product_category} = this.props
+        
+        axios.post(`/add/product`, {product_name, product_image, product_price, product_description, product_category})
+        .then(res => {
+            console.log(res.data)
+            const {product_id} = res.data
+            this.props.addProduct(res.data)
+            this.props.history.push(`/shop/${product_id}`)
+        })
     }
 
     render(){
@@ -37,11 +57,11 @@ class AdminTools extends Component {
 
                 <span>Add Product:</span>
                 <br />
-                <input placeholder='Product Title' type='text'/>
+                <input onChange={(e) => this.handleChange('product_title', e.target.value)} placeholder='Product Title' type='text'/>
                 <br />
-                <input placeholder='Product Price' type='integer'/>
+                <input onChange={(e) => this.handleChange('product_price', e.target.value)} placeholder='Product Price' type='integer'/>
                 <br />
-                <input placeholder='Image URL' type='text'/>
+                <input onChange={(e) => this.handleChange('product_image', e.target.value)} placeholder='Image URL' type='text'/>
                 <br />
                 <select>
                     <option>Litfam Essential</option>
@@ -49,12 +69,25 @@ class AdminTools extends Component {
                     <option>yeet(negativity)</option>
                 </select>
                 <br />
-                <textarea rows='10' cols='50' className='' id='description-textarea' placeholder='Description' type='text' />
+                <textarea rows='10' cols='50' onChange={(e) => this.handleChange('product_description', e.target.value)} className='' id='description-textarea' placeholder='Description' type='text' />
                 <br />
+                <button onClick={() => this.addProduct()}>Add Product</button>
                 
             </div>
         )
     }
 }
 
-export default AdminTools
+const mapStateToProps = reduxState => {
+    const {product_id, product_name, product_price, product_image, product_description, product_category} = reduxState.shop_reducer
+    return {
+        product_id, 
+        product_name, 
+        product_price, 
+        product_image, 
+        product_description, 
+        product_category
+    }
+}
+
+export default connect(mapStateToProps, {addProduct})(AdminTools)
