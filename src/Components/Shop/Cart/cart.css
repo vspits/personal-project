@@ -61,6 +61,12 @@
     align-items: center;
     border: none;
     box-shadow: 2px 3px 10px rgb(164, 164, 164);
+    outline: none;
+    text-decoration: none;
+}
+
+.quantity-buttons:focus{
+    outline:none;
 }
 
 /* .item-labels {
