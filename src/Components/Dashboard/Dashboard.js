@@ -9,8 +9,8 @@ export default function Dashboard(props){
             <div className='alpha-channel'>
             
             <Link to='/shop/category'><button className='dashboard-button' id='top-button'>SHOP</button></Link>
-            
-            <Link to='/posts'><button className='dashboard-button'>BLOG</button></Link>
+{/*             
+            <Link to='/posts'><button className='dashboard-button'>BLOG</button></Link> */}
 
             </div>
         </div>

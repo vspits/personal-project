@@ -31,6 +31,8 @@ class Products extends Component {
                     className='ProductComponent'
                     style={{backgroundImage: `url(${product.product_image})`, backgroundSize: 'cover'}}
                     key={product.product_id}>
+                </div>
+                <div>
 
                     <p className='product-name'>{product.product_name}</p>
                     <p className='product-price'>${product.product_price}.00</p>
@@ -39,7 +41,7 @@ class Products extends Component {
         })
         return (
             <div>
-                <p className='producttitle'>Products:</p>
+                <p className='producttitle'>PRODUCTS:</p>
                 <div className='ParentComponent'>
                     {mappedProducts}
                 </div>

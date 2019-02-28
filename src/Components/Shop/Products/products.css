@@ -3,7 +3,7 @@
     width: 350px;
     border-radius: 30px;
     box-shadow: 5px 10px 24px #797979;
-    margin: 25px 60px;
+    margin: 15px 60px;
 }
 
 .ProductComponent:hover {
@@ -23,11 +23,13 @@
 .product-name {
     font-family: 'Montserrat';
     font-size: 28px;
-    padding: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
 }
 .product-name:hover{
     text-decoration: none;
-    color: rgb(0, 187, 255);
+    color: rgb(83, 173, 80);
 }
 
 .product-links {
