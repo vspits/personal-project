@@ -41,6 +41,10 @@
         height: 250px;
         width: 250px;
     }
+    .CategoryTitle {
+        font-size: 26px;
+        padding: 25px 10px;
+    }
 }
 
 @media (min-width: 991px) and (max-width: 1200px){

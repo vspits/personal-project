@@ -51,6 +51,9 @@
         flex-direction: column;
         align-items: center;
     }
+    .product-name {
+        font-size: 18px;
+    }
 }
 
 @media (min-width: 991px) and (max-width: 1200px){
@@ -68,5 +71,8 @@
     .producttitle {
         font-size: 22px;
         padding: 0px;
+    }
+    .product-name {
+        font-size: 18px;
     }
 }
