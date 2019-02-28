@@ -4,7 +4,6 @@ import { updateUser } from '../../ducks/reducers/users_reducer'
 import {connect} from 'react-redux'
 import axios from 'axios'
 import './nav.css'
-import Dropdown from 'react-bootstrap/Dropdown'
 
 class Nav extends Component {
     constructor(props){
