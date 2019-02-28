@@ -9,6 +9,7 @@
     margin: 50px auto;
     outline: none;
     border: none;
+    box-shadow: 1px 4px 8px rgb(176, 176, 176);
 }
 
 .payment-button:hover{
