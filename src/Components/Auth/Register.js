@@ -60,7 +60,7 @@ class Register extends Component {
                 <br></br>
                 <br></br>
                 
-                <Link to='/auth/login'><button>Cancel</button></Link>
+                <Link to='/auth/login'>Cancel</Link>
             </div>
         )
     }
