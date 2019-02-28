@@ -40,6 +40,7 @@ app.use( async (req, res, next) => {
     next()
 })
 
+app.use( express.static(`${__dirname}/../build` ))
 
 
 
