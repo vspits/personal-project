@@ -58,6 +58,7 @@
     font-size: 16px;
     margin: 0px auto;
     outline: none;
+    border: none;
 }
 .addtocartbutton:hover {
     background-image: linear-gradient(to bottom, rgb(31, 73, 199), rgb(46, 110, 177), rgb(48, 151, 172));

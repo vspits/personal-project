@@ -10,9 +10,11 @@ function Category(props){
                     className='CategoryComponent' 
                     style={{backgroundImage: `url(${props.category_image})`, backgroundSize: 'cover', position: 'relative'}}
                 >
-                <div className='baby-div'>
-                <p className='CategoryTitle'>{props.category_name}</p>
-                </div>
+                    <div className='baby-div'>
+
+                    <p className='CategoryTitle'>{props.category_name}</p>
+                    
+                    </div>
 
             </div></Link>
         </div>

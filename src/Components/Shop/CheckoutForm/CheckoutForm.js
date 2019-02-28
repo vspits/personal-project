@@ -18,9 +18,9 @@ class CheckoutForm extends Component {
       headers: {"Content-Type": "text/plain"},
       body: token.id
     })
-    .then(res => {
-      this.props.history.push(`/shop/category`)
-    })
+    // .then(res => {
+    //   this.props.history.push(`/shop/category`)
+    // })
     if (response.ok) console.log("Purchase Complete!")
   }
 

@@ -32,6 +32,7 @@
     font-size: 16px;
     margin: 50px auto;
     outline: none;
+    border: none;
 }
 
 .checkout-button:hover {
@@ -58,6 +59,8 @@
     border-radius: 10px;
     background-color: rgb(216, 210, 230);
     align-items: center;
+    border: none;
+    box-shadow: 2px 3px 10px rgb(164, 164, 164);
 }
 
 /* .item-labels {

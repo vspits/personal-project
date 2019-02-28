@@ -7,6 +7,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     outline: none;
+    border: none;
 }
 .button:hover {
     background-image: linear-gradient(to bottom, rgb(31, 73, 199), rgb(46, 110, 177), rgb(48, 151, 172));
