@@ -49,7 +49,7 @@ class Nav extends Component {
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light">
                 <div className='Logo'>
-                    <Link to='/' className='link-tags'><span className='title'>GardenSpace</span></Link>
+                    <Link to='/shop/category' className='link-tags'><span className='title'>GardenSpace</span></Link>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
