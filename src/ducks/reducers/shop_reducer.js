@@ -36,8 +36,7 @@ export default function shop_reducer(state = initialState, action){
     const { type, payload } = action
     switch(type){
         case UPDATE_CART:
-            const {product_id, product_name, product_price, order_id, quantity, order_price} = payload
-            return {...state, product_id, product_name, product_price, order_id, quantity, order_price};
+            return {...state, ...payload};
 
         case ADD_PRODUCT:
             return {...state, ...payload}

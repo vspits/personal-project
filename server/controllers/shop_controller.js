@@ -60,6 +60,14 @@ module.exports ={
             .catch(err => console.log(err))
 
     },
+    removeFromCart: (req, res, next) => {
+        const db = req.app.get('db')
+        const { item_id } = req.params
+
+        db.cart.remove_from_cart({item_id})
+            .then(product => res.sendStatus(200))
+            .catch(err => console.log(err))
+    },
     deleteProduct: (req, res, next) => {
         const db = req.app.get('db')
         const {product_id} = req.params

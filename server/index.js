@@ -81,6 +81,7 @@ app.post(`/add/product`, shop_ctrl.addProduct)
 //cart
 app.get(`/cart`, shop_ctrl.getCart)
 app.patch(`/cart/:quantity/:item_id`, shop_ctrl.updateQuantity)
+app.delete(`/cart/remove/:quantity/:item_id`, shop_ctrl.removeFromCart)
 
 //blog
 app.get(`/posts`, blog_ctrl.getAllPosts)

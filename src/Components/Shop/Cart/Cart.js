@@ -18,7 +18,9 @@ class Cart extends Component {
         }
         this.getCart = this.getCart.bind(this)
         this.updateQuantity = this.updateQuantity.bind(this)
-        // this.calculateTotal = this.calculateTotal.bind(this)
+        this.calculateSubtotal = this.calculateSubtotal.bind(this)
+        this.calculateTaxes = this.calculateTaxes.bind(this)
+        this.calculateTotal = this.calculateTotal.bind(this)
     }
 
     componentDidMount(){
@@ -33,15 +35,35 @@ class Cart extends Component {
             .catch(err => console.log(err))
     }
 
-    // calculateTotal(){
-    //     this.product_price * this.quantity
-    // }
+    calculateSubtotal(){
+        let subtotal = this.state.cart.reduce((accumulator, value)=> {
+            return accumulator + (value.quantity * value.product_price)
+        }, 0)
+
+        return subtotal.toFixed(2)
+    }
+
+    calculateTaxes(){
+        let taxTotal = this.state.cart.reduce((accumulator, value) => {
+            return accumulator + (value.quantity * (value.product_price * 0.047))
+        }, 0)
+
+        return taxTotal.toFixed(2)
+    }
+
+    calculateTotal(){
+        let total = this.state.cart.reduce((accumulator, value) => {
+            return accumulator + (value.quantity * (value.product_price * 1.047))
+        }, 0)
+
+        return total.toFixed(2)
+    }
 
     updateQuantity(quantityChange, item){
-        console.log(item)
         const newQuantity = item.quantity + quantityChange
-        if(newQuantity<0){
-            alert(`Cannot have quantity below 0`)
+        if(newQuantity<1){
+            axios.delete(`/cart/remove/${newQuantity}/${item.item_id}`)
+            .then(res => this.getCart())
         } else {
             axios.patch(`/cart/${newQuantity}/${item.item_id}`)
             .then(res => this.getCart())
@@ -91,11 +113,11 @@ class Cart extends Component {
                 </div>
 
                 <br />
-                <span className='cart-total'>SUBTOTAL:</span>
+                <span className='cart-total'>SUBTOTAL: ${this.calculateSubtotal()}</span>
                 <br />
-                <span className='cart-total'>TAXES: </span>
+                <span className='cart-total'>TAXES: ${this.calculateTaxes()}</span>
                 <br />
-                <span className='cart-total'>TOTAL: {() => this.calculateTotal()}</span>
+                <span className='cart-total'>TOTAL: ${this.calculateTotal()}</span>
                 <br/>
                 <Link to='/checkout'><button className='checkout-button'>CHECKOUT</button></Link>
                 
@@ -105,10 +127,11 @@ class Cart extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
-    const {user_id, quantity} = reduxState.users_reducer
+    const {user_id, quantity, product_price} = reduxState.users_reducer
     return {
         user_id,
-        quantity
+        quantity,
+        product_price
     }
 }
 

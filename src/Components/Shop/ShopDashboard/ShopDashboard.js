@@ -36,7 +36,7 @@ class ShopDashboard extends Component{
         })
         return(
             <div>
-                <p className='Title'>Shop by Category</p>
+                <p className='Title'>Shop by Category:</p>
                 <div className='Categories'>
                     {mappedCategories}
                 </div>

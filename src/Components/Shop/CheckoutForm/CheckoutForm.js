@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {CardElement, injectStripe} from 'react-stripe-elements'
 import './checkoutForm.css'
+import {withRouter} from 'react-router-dom'
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -18,9 +19,9 @@ class CheckoutForm extends Component {
       headers: {"Content-Type": "text/plain"},
       body: token.id
     })
-    // .then(res => {
-    //   this.props.history.push(`/shop/category`)
-    // })
+    .then(res => {
+      this.props.history.push(`/shop/category`)
+    })
     if (response.ok) console.log("Purchase Complete!")
   }
 
@@ -39,4 +40,4 @@ class CheckoutForm extends Component {
   }
 }
 
-export default injectStripe(CheckoutForm)
+export default withRouter(injectStripe(CheckoutForm))
