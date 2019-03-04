@@ -20,7 +20,7 @@ class CheckoutForm extends Component {
       body: token.id
     })
     .then(res => {
-      this.props.history.push(`/shop/category`)
+      this.props.history.push(`/payment-complete`)
     })
     if (response.ok) console.log("Purchase Complete!")
   }

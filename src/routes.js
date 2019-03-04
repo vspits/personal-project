@@ -12,6 +12,7 @@ import Products from './Components/Shop/Products/Products'
 import Product from './Components/Shop/Product/Product'
 import AdminTools from './Components/Auth/AdminTools/AdminTools'
 import Checkout from './Components/Shop/Checkout/Checkout'
+import PaymentComplete from './Components/Shop/PaymentComplete/PaymentComplete'
 
 export default (
     <Switch>
@@ -31,6 +32,7 @@ export default (
         <Route path='/shop/:product_id' component={Product}/>
         <Route path='/cart' component={Cart}/>
         <Route path='/checkout' component={Checkout} />
+        <Route path='/payment-complete' component={PaymentComplete} />
 
 
         {/* BLOG */}
