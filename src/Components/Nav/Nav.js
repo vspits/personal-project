@@ -52,21 +52,22 @@ class Nav extends Component {
                     <Link to='/shop/category' className='link-tags'><span className='title'>GardenSpace</span></Link>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    {/* <span className="navbar-toggler-icon" style={{backgroundColor: "white"}} ></span> */}
+                    <span style={{color: 'white'}}><i class="fas fa-bars"></i></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item active">
+                        <li className="nav-item active" data-toggle="collapse" data-target="#navbarNavDropdown">
                             {this.props.isadmin &&                       
                                 <Link className='link' to='/adminTools'>TOOLS</Link>}
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNavDropdown">
                             <Link className='link' to='/cart'>CART</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNavDropdown">
                             <Link className='link' to='/shop/category'>SHOP</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target="#navbarNavDropdown">
                             {(!this.props.user_id)
                                 ? <Link className='link' to='/auth/login'><span>LOGIN</span></Link>  
                                 : <Link className='link' to='/auth/logout'><span onClick={this.logout}>LOGOUT</span></Link>}
