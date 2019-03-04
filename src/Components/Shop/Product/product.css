@@ -66,6 +66,9 @@
 }
 .addtocartbutton:hover {
     background-image: linear-gradient(to bottom, rgb(1, 109, 17), rgb(44, 128, 28), rgb(48, 165, 62));
+    border: none;
+    text-decoration: none;
+    outline: none;
 }
 .delete-product-button {
     width: 30%;
