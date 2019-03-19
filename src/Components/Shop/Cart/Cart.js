@@ -8,13 +8,14 @@ class Cart extends Component {
     constructor(props){
         super(props)
         this.state = {
-            cart: [{
-                product_id: 0,
-                product_name: '',
-                product_price: 0,
-                product_image: '',
-                quantity: 0
-            }]
+            // cart: [{
+            //     product_id: 0,
+            //     product_name: '',
+            //     product_price: 0,
+            //     product_image: '',
+            //     quantity: 0
+            // }]
+            cart: []
         }
         this.getCart = this.getCart.bind(this)
         this.updateQuantity = this.updateQuantity.bind(this)
@@ -75,43 +76,35 @@ class Cart extends Component {
             return (
                 <div className='cart-items-container' key={item.product_id}>
                     <div>
-                        {/* <img 
-                            src={`url(${item.product_image})`} 
-                            alt='product-thumbnail' 
-                            style={{height: '100px', width: '100px'}}/> */}
-
                         <span className='item-labels'>{item.product_name}</span>
                     </div>
-
                     <div>
                         <button onClick={() => this.updateQuantity(-1, item)} className='quantity-buttons'>-</button>
                         <span className='item-labels'>{item.quantity}</span>
                         <button onClick={() => this.updateQuantity(1, item)} className='quantity-buttons'>+</button>
                     </div>
-
                     <span className='item-labels'>${item.product_price}.00</span>
                 </div>
             )
         })
 
+        console.log('cart item', this.state.cart[0])
         return (
             <div className='cart-component'>
                 <span className='cart-title'>SHOPPING CART</span>
 
+                {(!this.state.cart[0])
+                    ? <span><br/><br/><br/><br/><br/><br/><i>There are no items in your cart yet</i></span>
+                    : (
+                <div>
                 <div className='cart-details'>
                     <span className='cart-labels'>ITEM</span>
-
-                    
                     <span className='cart-labels'>QUANTITY</span>
-
-
                     <span className='cart-labels'>PRICE</span>
                 </div>
-
                 <div>
                     {mappedCart}
                 </div>
-
                 <br />
                 <span className='cart-total'>SUBTOTAL: ${this.calculateSubtotal()}</span>
                 <br />
@@ -120,7 +113,8 @@ class Cart extends Component {
                 <span className='cart-total'>TOTAL: ${this.calculateTotal()}</span>
                 <br/>
                 <Link to='/checkout'><button className='checkout-button'>CHECKOUT</button></Link>
-                
+                </div>)
+            }
             </div>
         )
     }
