@@ -15,6 +15,10 @@
     background-image: linear-gradient(to bottom, rgb(1, 109, 17), rgb(44, 128, 28), rgb(48, 165, 62));
 }
 
+.dashboard-button:focus{
+    outline: none;
+}
+
 .dashcontainer {
     height: 100%;
     width: 100%;

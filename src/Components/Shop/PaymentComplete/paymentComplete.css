@@ -23,3 +23,7 @@
     text-decoration: none;
     outline: none;
 }
+
+.return-to-shop-button:focus{
+    outline: none;
+}

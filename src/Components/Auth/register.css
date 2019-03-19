@@ -16,6 +16,11 @@
     text-decoration: none;
     outline: none;
 }
+
+.button:focus{
+    outline: none;
+}
+
 .register-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;

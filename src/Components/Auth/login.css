@@ -18,6 +18,10 @@
     outline: none;
 }
 
+.button:focus{
+    outline: none;
+}
+
 .login-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;

@@ -62,12 +62,16 @@
     margin: 20px auto;
     outline: none;
     border: none;
+    text-decoration: none;
     box-shadow: 1px 4px 8px rgb(176, 176, 176);
 }
-.addtocartbutton:hover {
+.addtocartbutton:hover{
     background-image: linear-gradient(to bottom, rgb(1, 109, 17), rgb(44, 128, 28), rgb(48, 165, 62));
     border: none;
     text-decoration: none;
+    outline: none;
+}
+.addtocartbutton:focus{
     outline: none;
 }
 .delete-product-button {

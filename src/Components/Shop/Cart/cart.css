@@ -43,6 +43,9 @@
     text-decoration: none;
     outline: none;
 }
+.checkout-button:focus{
+    outline: none;
+}
 
 .cart-total {
     font-family: 'Montserrat', sans-serif;
