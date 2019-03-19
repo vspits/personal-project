@@ -32,6 +32,10 @@ class Product extends Component {
     addToCart(){
         const {user_id} = this.props
         const {product_id} = this.props.match.params
+
+        if(!this.props.user_id){
+            alert('Please log in to use cart feature')
+        }
         
         axios.post(`/cart/${user_id}/${product_id}`)
         .then(res => {
@@ -67,27 +71,18 @@ class Product extends Component {
                 <div 
                     className='info-container' 
                     key={this.state.product[0].product_id}>
-
                     <span className='product-title'>{this.state.product[0].product_name}</span>
-
                     <span className='product-price'>${this.state.product[0].product_price}.00</span>
-
                     <button className='addtocartbutton' onClick={() => this.addToCart()}>ADD TO CART</button>
-
                     <span className='product-description-title'>PRODUCT DESCRIPTION</span>
-
                     <p className='product-description'>{this.state.product[0].product_description}</p>
-
                     <div>
                     {
                         (this.props.isadmin) &&
-                        
                         <button onClick={() => this.deleteProduct()} className='delete-product-button'>Delete Product</button>
                     }
                     </div>
-
                 </div>
-
             </div>
         )
     }
