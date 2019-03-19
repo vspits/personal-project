@@ -53,7 +53,7 @@ class Nav extends Component {
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     {/* <span className="navbar-toggler-icon" style={{backgroundColor: "white"}} ></span> */}
-                    <span style={{color: 'white'}}><i class="fas fa-bars"></i></span>
+                    <span style={{color: 'white'}}><i className="fas fa-bars"></i></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav ml-auto">

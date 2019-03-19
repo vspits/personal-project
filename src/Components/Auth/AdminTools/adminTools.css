@@ -4,6 +4,12 @@
     padding: 25px;
 }
 
+.add-product-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    padding: 25px;
+}
+
 .AdminTools {
     margin: 25px;
 }
@@ -14,4 +20,27 @@
     font-size: 16px;
     box-sizing: border-box;
     resize: none;
+}
+
+.add-product-button {
+    background-image: linear-gradient(to bottom, rgb(0, 172, 26), rgb(75, 205, 49), rgb(75, 240, 94));
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    box-shadow: 1px 4px 8px rgb(176, 176, 176);
+    margin: 20px auto;
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
+
+.add-product-button:hover{
+    background-image: linear-gradient(to bottom, rgb(1, 109, 17), rgb(44, 128, 28), rgb(48, 165, 62));
+    border: none;
+    text-decoration: none;
+    outline: none;
 }

@@ -17,7 +17,7 @@ class AdminTools extends Component {
         this.setState({[prop]: value})
     }
     
-    addProduct(){
+    addProduct(product_id){
         const {product_name, product_image, product_price, product_description, product_category} = this.props
         
         axios.post(`/add/product`, {product_name, product_image, product_price, product_description, product_category})
@@ -33,13 +33,13 @@ class AdminTools extends Component {
         return (
             <div className='AdminTools'>
 
-                <span className='admin-tools-title'>Admin Tools</span>
+                <span className='admin-tools-title'>ADMIN TOOLS</span>
 
                 <br />
                 <br />
-                <br />
+                
 
-                <span>Search orders:</span>
+                {/* <span>Search orders:</span>
                 <br />
                 <input placeholder='Order Number' type='integer'/>
 
@@ -53,9 +53,10 @@ class AdminTools extends Component {
 
                 <br />
                 <br />
-                <br />
+                <br /> */}
 
-                <span>Add Product:</span>
+                <span className='add-product-text'>Add Product:</span>
+                <br />
                 <br />
                 <input onChange={(e) => this.handleChange('product_title', e.target.value)} placeholder='Product Title' type='text'/>
                 <br />
@@ -63,15 +64,17 @@ class AdminTools extends Component {
                 <br />
                 <input onChange={(e) => this.handleChange('product_image', e.target.value)} placeholder='Image URL' type='text'/>
                 <br />
+                <br />
                 <select>
-                    <option>Litfam Essential</option>
-                    <option>Eggstra Money</option>
-                    <option>yeet(negativity)</option>
+                    <option>TOOLS</option>
+                    <option>FRUITS</option>
+                    <option>FLOWERS</option>
                 </select>
+                <br />
                 <br />
                 <textarea rows='10' cols='50' onChange={(e) => this.handleChange('product_description', e.target.value)} className='' id='description-textarea' placeholder='Description' type='text' />
                 <br />
-                <button onClick={() => this.addProduct()}>Add Product</button>
+                <button className='add-product-button' onClick={() => this.addProduct()}>ADD PRODUCT</button>
                 
             </div>
         )

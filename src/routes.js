@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route , Switch} from 'react-router-dom'
-import Dashboard from './Components/Dashboard/Dashboard'
+// import Dashboard from './Components/Dashboard/Dashboard'
 import Cart from './Components/Shop/Cart/Cart'
 import About from './Components/About/About'
 import Login from './Components/Auth/Login'
@@ -17,7 +17,7 @@ import PaymentComplete from './Components/Shop/PaymentComplete/PaymentComplete'
 export default (
     <Switch>
         
-        <Route exact path='/' component={Dashboard}/>
+        <Route exact path='/' component={ShopDashboard}/>
         <Route path='/about' component={About}/>
 
         {/* AUTHENTICATION */}
